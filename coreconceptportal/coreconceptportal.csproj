@@ -130,6 +130,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -164,8 +165,6 @@
     <Content Include="App_Data\CoreConceptDataBase_log.ldf">
       <DependentUpon>CoreConceptDataBase.mdf</DependentUpon>
     </Content>
-    <Content Include="bin\coreconceptportal.dll" />
-    <Content Include="bin\coreconceptportal.pdb" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -187,6 +186,7 @@
       <LastGenOutput>CoreConceptData.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\app\home.js" />
+    <Content Include="Scripts\app\Project\Project.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -328,7 +328,10 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\" />
+    <Folder Include="Views\Project\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
