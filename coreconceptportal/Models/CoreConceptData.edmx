@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CoreConceptDataBaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\DANIEL\DESKTOP\CORECONCEPTPORTAL\CORECONCEPTPORTAL\APP_DATA\CORECONCEPTDATABASE.MDF.dbo.Hours' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Hours">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ProjectId" Type="int" />
+          <Property Name="ExtraHours" Type="datetime" />
+          <Property Name="Hours" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="ProjectId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Workers" Type="int" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Fare" Type="float" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <Association Name="FK_Hours_ProjectId">
+          <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
+          <End Role="Hours" Type="Self.Hours" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="Hours">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hours_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Hours" Type="Self.Hours" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Hours">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CoreConceptDataBaseModelStoreContainer">
+          <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hours" EntityType="Self.Hours" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Hours].[UserId] AS [UserId], 
+    [Hours].[ProjectId] AS [ProjectId], 
+    [Hours].[ExtraHours] AS [ExtraHours], 
+    [Hours].[Hours] AS [Hours]
+    FROM [dbo].[Hours] AS [Hours]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Hours_ProjectId" Association="Self.FK_Hours_ProjectId">
+            <End Role="Project" EntitySet="Project" />
+            <End Role="Hours" EntitySet="Hours" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hours_User" Association="Self.FK_Hours_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Hours" EntitySet="Hours" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CoreConceptDataBaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Workers" Type="Int32" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Hours" Relationship="Self.FK_Hours_ProjectId" FromRole="Project" ToRole="Hours" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Fare" Type="Double" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Hours" Relationship="Self.FK_Hours_User" FromRole="User" ToRole="Hours" />
+        </EntityType>
+        <EntityType Name="Hours">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ProjectId" Type="Int32" />
+          <Property Name="ExtraHours" Type="DateTime" Precision="3" />
+          <Property Name="Hours1" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Project" Relationship="Self.FK_Hours_ProjectId" FromRole="Hours" ToRole="Project" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Hours_User" FromRole="Hours" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Hours_ProjectId">
+          <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
+          <End Role="Hours" Type="Self.Hours" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="Hours">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hours_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Hours" Type="Self.Hours" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Hours">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CoreConceptDataBaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Project" EntityType="Self.Project" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="Hours" EntityType="Self.Hours" />
+          <AssociationSet Name="FK_Hours_ProjectId" Association="Self.FK_Hours_ProjectId">
+            <End Role="Project" EntitySet="Project" />
+            <End Role="Hours" EntitySet="Hours" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hours_User" Association="Self.FK_Hours_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Hours" EntitySet="Hours" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CoreConceptDataBaseModelStoreContainer" CdmEntityContainer="CoreConceptDataBaseEntities">
+          <EntitySetMapping Name="Project">
+            <EntityTypeMapping TypeName="CoreConceptDataBaseModel.Project">
+              <MappingFragment StoreEntitySet="Project">
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Workers" ColumnName="Workers" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="CoreConceptDataBaseModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Fare" ColumnName="Fare" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hours">
+            <EntityTypeMapping TypeName="CoreConceptDataBaseModel.Hours">
+              <MappingFragment StoreEntitySet="Hours">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="ExtraHours" ColumnName="ExtraHours" />
+                <ScalarProperty Name="Hours1" ColumnName="Hours" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
