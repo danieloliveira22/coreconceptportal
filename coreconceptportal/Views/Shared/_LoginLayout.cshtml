@@ -2,13 +2,20 @@
 
 <html>
 <head>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
     <meta name="viewport" content="width=device-width" />
-    <title>_LoginLayout</title>
+
 </head>
 <body>
-    <img width="120" height="40" src="~/Content/img/core_logo_no_bg.png" />
+    <div style="width: 100%;">
+        <img width="130" height="40" src="~/Content/img/core_logo_no_bg.png" style="margin: 20px" />
+    </div>
     <div>
         @RenderBody()
     </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/popper.js" ></script>
+    <script src="~/Scripts/bootstrap.js"></script>
 </body>
 </html>

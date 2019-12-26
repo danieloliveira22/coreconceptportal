@@ -1,4 +1,5 @@
-﻿using System;
+﻿using coreconceptportal.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,7 +17,8 @@ namespace coreconceptportal.Controllers
             }
             else
             {
-                return View();
+                var user = Session["User"] as User;   
+                return View(user);
             }
         }
 

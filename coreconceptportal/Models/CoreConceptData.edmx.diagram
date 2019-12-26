@@ -10,7 +10,6 @@
         <EntityTypeShape EntityType="CoreConceptDataBaseModel.Hours" Width="1.5" PointX="4.75" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="CoreConceptDataBaseModel.FK_Hours_ProjectId" ManuallyRouted="false" />
         <AssociationConnector Association="CoreConceptDataBaseModel.FK_Hours_User" ManuallyRouted="false" />
-        <AssociationConnector Association="CoreConceptDataBaseModel.ProjectUser" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

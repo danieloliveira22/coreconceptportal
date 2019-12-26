@@ -95,7 +95,6 @@ warning 6002: The table/view 'C:\USERS\DANIEL\DESKTOP\CORECONCEPTPORTAL\CORECONC
           <Property Name="StartDate" Type="DateTime" Precision="3" />
           <Property Name="EndDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Hours" Relationship="Self.FK_Hours_ProjectId" FromRole="Project" ToRole="Hours" />
-          <NavigationProperty Name="User" Relationship="CoreConceptDataBaseModel.ProjectUser" FromRole="Project" ToRole="User" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -107,7 +106,6 @@ warning 6002: The table/view 'C:\USERS\DANIEL\DESKTOP\CORECONCEPTPORTAL\CORECONC
           <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Hours" Relationship="Self.FK_Hours_User" FromRole="User" ToRole="Hours" />
-          <NavigationProperty Name="Project" Relationship="CoreConceptDataBaseModel.ProjectUser" FromRole="User" ToRole="Project" />
         </EntityType>
         <EntityType Name="Hours">
           <Key>
@@ -156,15 +154,7 @@ warning 6002: The table/view 'C:\USERS\DANIEL\DESKTOP\CORECONCEPTPORTAL\CORECONC
             <End Role="User" EntitySet="User" />
             <End Role="Hours" EntitySet="Hours" />
           </AssociationSet>
-          <AssociationSet Name="ProjectUser" Association="CoreConceptDataBaseModel.ProjectUser">
-            <End Role="Project" EntitySet="Project" />
-            <End Role="User" EntitySet="User" />
-          </AssociationSet>
         </EntityContainer>
-        <Association Name="ProjectUser">
-          <End Type="CoreConceptDataBaseModel.Project" Role="Project" Multiplicity="*" />
-          <End Type="CoreConceptDataBaseModel.User" Role="User" Multiplicity="*" />
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
