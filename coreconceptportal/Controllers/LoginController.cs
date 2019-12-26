@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace coreconceptportal.Controllers
 {
-    public class LoginController : Controller
+    public class LoginController : BaseController
     {
         // GET: Login
         public ActionResult Login()
