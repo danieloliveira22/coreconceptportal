@@ -9,7 +9,7 @@ namespace coreconceptportal.Controllers
     public class LoginController : Controller
     {
         // GET: Login
-        public ActionResult Index()
+        public ActionResult Login()
         {
             return View();
         }

@@ -138,10 +138,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CoreConceptData.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CoreConceptData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreConceptData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\CoreConceptData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CoreConceptData.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hours.cs">
+      <DependentUpon>CoreConceptData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Project.cs">
+      <DependentUpon>CoreConceptData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>CoreConceptData.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -162,7 +176,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\CoreConceptData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CoreConceptData.edmx</DependentUpon>
       <LastGenOutput>CoreConceptData.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\CoreConceptData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CoreConceptData.edmx</DependentUpon>
+      <LastGenOutput>CoreConceptData.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -191,9 +211,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CoreConceptData.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\CoreConceptData.edmx.diagram">
+    <Content Include="Models\CoreConceptData.edmx.diagram">
       <DependentUpon>CoreConceptData.edmx</DependentUpon>
-    </None>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

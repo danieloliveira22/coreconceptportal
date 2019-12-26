@@ -10,7 +10,14 @@ namespace coreconceptportal.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public ActionResult About()

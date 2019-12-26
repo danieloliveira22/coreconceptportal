@@ -18,6 +18,7 @@ namespace coreconceptportal.Models
         public Project()
         {
             this.Hours = new HashSet<Hours>();
+            this.User = new HashSet<User>();
         }
     
         public int ProjectId { get; set; }
@@ -28,5 +29,7 @@ namespace coreconceptportal.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Hours> Hours { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> User { get; set; }
     }
 }
