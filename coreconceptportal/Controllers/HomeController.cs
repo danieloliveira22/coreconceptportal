@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace coreconceptportal.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public ActionResult Index()
         {
@@ -22,18 +22,25 @@ namespace coreconceptportal.Controllers
             }
         }
 
-        public ActionResult About()
+        public ActionResult newUser(string teste)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            var html = "";
+            var statusreq = this.StatusOk;
+            try
+            {
+                html = RenderPartialViewToString("_formUser");
+            }
+            catch(Exception ex)
+            {
+                html = ex.Message;
+                statusreq = this.StatusError;
+            }
+            return Json(new
+            {
+                html = html,
+                status = statusreq
+            }, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }
