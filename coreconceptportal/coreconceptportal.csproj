@@ -164,6 +164,8 @@
     <Content Include="App_Data\CoreConceptDataBase_log.ldf">
       <DependentUpon>CoreConceptDataBase.mdf</DependentUpon>
     </Content>
+    <Content Include="bin\coreconceptportal.dll" />
+    <Content Include="bin\coreconceptportal.pdb" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
