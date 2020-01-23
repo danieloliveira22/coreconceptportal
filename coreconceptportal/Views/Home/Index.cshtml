@@ -1,7 +1,72 @@
 ﻿@model coreconceptportal.Models.User
- 
-Olá, @Model.Name
 
-<div id="formUser">
+@*Olá, @Model.Name*@
+    <div id="shortcutGroup">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="@Url.Action("Index","Projects")">
+                    <div class="navButton button1">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="projectIcon">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+              
 
-</div>
+            </div>
+            <div class="col-md-4">
+                <a href="#">   @* <-------- INSERE AQUI O HREF DA VIEW DAS HORAS *@
+                    <div class="navButton button2">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="projectIcon">
+                                <i class="far fa-clock"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="@Url.Action("Index","Projects")">
+                    <div class="navButton button3">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="projectIcon">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+            </div>
+        </div>
+
+        <div id="shortcutText">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="subtitle" id="titleProject">
+                        <h3>PROJETOS</h3>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="subtitle" id="titleHours">
+                        <h3>HORAS EXTRA</h3>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="subtitle" id="titleSomething">
+                        <h3>INFORMACAO</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+

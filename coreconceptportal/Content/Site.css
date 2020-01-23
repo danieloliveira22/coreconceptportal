@@ -22,3 +22,126 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*.navButtonSection {
+
+    display: inline-block;
+}*/
+
+
+
+
+/*SHORTCUT LIST CSS */
+
+
+    #shortcutGroup {
+        margin-top: 200px;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+    }
+
+    #shortcutText {
+        width: 100%;
+        position: absolute;
+        z-index: 0;
+        top: 275px;
+    }
+
+    .navButton {
+        padding: 59px;
+        width: 250px;
+        background-color: transparent;
+        border: 1px solid #e6e6e6;
+        height: 250px;
+        border-radius: 50%;
+        box-shadow: inset 0px 1px 0 rgba(255,255,255,0.3), 0 2px 2px rgba(0, 0, 0, 0.3);
+    }
+
+        .navButton.button1 {
+            margin-right: 10%;
+            float: right
+        }
+
+        .navButton.button2 {
+            margin: auto;
+        }
+
+        .navButton.button3 {
+            margin-left: 10%;
+        }
+
+        .navButton:hover {
+            padding: 60px;
+            width: 255px;
+            background-color: #c2d6d6;
+            border: 1px solid #e6e6e6;
+            height: 255px;
+            border-radius: 50%;
+            box-shadow: inset 0px 1px 0 rgba(255,255,255,0.3), 0 2px 2px rgba(0, 0, 0, 0.3);
+            background-image: -webkit-linear-gradient(45deg, #f2f2f2 0%, #dddddd 100%);
+            background-image: linear-gradient(45deg, #f2f2f2 0%, #dddddd 100%);
+        }
+
+    .projectIcon {
+        margin: auto;
+        text-align: center;
+        color: #6b90ab;
+        vertical-align: baseline;
+        font-size: 80px;
+    }
+
+    .projectTitle, .hoursTitle, .otherTitle {
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .subtitle {
+    }
+
+    #titleProject {
+        margin-right: 22%;
+        float: right;
+    }
+
+    #titleHours {
+        text-align: center;
+    }
+
+    #titleSomething {
+        margin-left: 22%;
+        float: left;
+    }
+
+    .subtitle h3 {
+        font-family: 'Varela', sans-serif;
+        font-weight: bold;
+        font-size: 25px;
+}
+
+/*SHORTCUT LIST CSS */
+
+
+
+
+
+    /*################## nav BAR CSS #####################*/
+    #navButtons{
+        position:absolute;
+        right:0px;
+        padding-right:35px;
+    }
+    #navbarNav {
+    }
+    #navbarConcept{
+        height:120px;
+    }
+    #newUserForm i{
+        font-size:30px;
+    }
+    #logoutLink {
+        font-family: 'Varela', sans-serif;
+        margin-top:6px;
+    }
+   
+    /*################## nav BAR CSS #####################*/
