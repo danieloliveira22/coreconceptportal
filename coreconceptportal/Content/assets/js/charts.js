@@ -17,21 +17,9 @@
       options: {
         legend: { display: false },
         title: {
-          display: false,
+          display: true,
           text: 'Predicted world population (millions) in 2050'
-        },
-        scales: {
-          yAxes: [{
-            ticks: {
-              fontColor: '#5c6dc0',
-            },
-        }],
-        xAxes: [{
-            ticks: {
-              fontColor: '#5c6dc0',
-            }
-        }]
-      }
+        }
       }
   });
 
@@ -78,7 +66,7 @@
         scales: {
           yAxes: [{
             ticks: {
-              fontColor: '#5c6dc0',
+              fontColor: "rgba(0,0,0,0.5)",
               fontStyle: "bold",
               beginAtZero: true,
               maxTicksLimit: 200,
@@ -96,7 +84,7 @@
             },
             ticks: {
               padding: 20,
-              fontColor: '#5c6dc0',
+              fontColor: "rgba(0,0,0,0.5)",
               fontStyle: "bold"
             }
         }]
@@ -112,23 +100,16 @@
       datasets: [{
         label: "Population (millions)",
         backgroundColor: ["#357ffa", "#f7b11b","#ff6c60","#8663e1","#08bf6f"],
-        borderWidth: 0,
         data: [2478,5267,734,784,433]
       }]
     },
     options: {
-      legend: {
-        labels: {
-          fontColor: '#5c6dc0',
-        }
-      },
       title: {
-        display: false,
+        display: true,
         text: 'Predicted world population (millions) in 2050'
       }
     }
   });
-
 
   //Polar Chart
   new Chart(document.getElementById("polar-chart"), {
@@ -144,13 +125,8 @@
       ]
     },
     options: {
-      legend: {
-        labels: {
-          fontColor: '#5c6dc0',
-        }
-      },
       title: {
-        display: false,
+        display: true,
         text: 'Predicted world population (millions) in 2050'
       }
     }
@@ -170,13 +146,8 @@
       ]
     },
     options: {
-      legend: {
-        labels: {
-          fontColor: '#5c6dc0',
-        }
-      },
       title: {
-        display: false,
+        display: true,
         text: 'Predicted world population (millions) in 2050'
       }
     }
@@ -200,27 +171,8 @@
       ]
     },
     options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            padding: 20,
-            fontColor: '#5c6dc0',
-          },
-      }],
-      xAxes: [{
-          ticks: {
-            padding: 20,
-            fontColor: '#5c6dc0',
-          }
-      }]
-      },
-      legend: {
-        labels:{
-          fontColor: '#5c6dc0',
-        }
-      },
       title: {
-        display: false,
+        display: true,
         text: 'Population growth (millions)'
       }
     }
@@ -258,22 +210,8 @@
       ]
     },
     options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            padding: 20,
-            fontColor: '#5c6dc0',
-          },
-      }],
-      xAxes: [{
-          ticks: {
-            padding: 20,
-            fontColor: '#5c6dc0',
-          }
-      }]
-      },
       title: {
-        display: false,
+        display: true,
         text: 'Population growth (millions): Europe & Africa'
       },
       legend: { display: false }

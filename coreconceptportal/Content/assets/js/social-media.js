@@ -27,15 +27,9 @@
         scales: {
 					xAxes: [{
 						stacked: true,
-            ticks: {
-              fontColor: '#5c6dc0'
-            }
 					}],
 					yAxes: [{
-						stacked: true,
-            ticks: {
-              fontColor: '#5c6dc0'
-            }
+						stacked: true
 					}]
 				},
       }

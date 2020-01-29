@@ -121,7 +121,8 @@
           scales: {
               yAxes: [{
                   ticks: {
-                      fontColor: '#5c6dc0',
+                      fontColor: "rgba(0,0,0,0.5)",
+                      fontStyle: "bold",
                       beginAtZero: true,
                       maxTicksLimit: 200,
                       padding: 20
@@ -139,7 +140,8 @@
                   ticks: {
                       padding: 20,
                       beginAtZero: true,
-                      fontColor: '#5c6dc0',
+                      fontColor: "rgba(0,0,0,0.5)",
+                      fontStyle: "bold"
                   }
               }]
           }

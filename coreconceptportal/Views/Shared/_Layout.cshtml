@@ -18,6 +18,7 @@
     <!-- jQuery UI -->
     <link href="/Content/assets/css/jquery-ui.min.css" rel="stylesheet">
     <link href="/Content/Site.css" rel="stylesheet">
+    <link href="/Content/MultipleContainer.scss" rel="stylesheet/less">
     <!-- Mystic styles -->
     <link href="/Content/assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="~/Content/assets/fontawesome-free-5.12.0-web/css/all.css" />
@@ -27,6 +28,7 @@
     <link href="https://fonts.googleapis.com/css?family=Varela&display=swap" rel="stylesheet">
     @* DRAGABBLE LINKS CSS END *@
 
+
 </head>
 <body>
 
@@ -35,8 +37,8 @@
             <a class="navbar-brand" id="navbarLogo" href="#"></a>
             <img width="160px" height="60px" src="~/Content/img/core_logo_no_bg.png" style="margin: 20px" />
             @*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>*@
+                    <span class="navbar-toggler-icon"></span>
+                </button>*@
             <div class=" navbar-collapse" id="navbarNav">
                 <ul class="nav navbar-nav ml-auto" id="navButtons">
                     <li class="nav-item">
@@ -57,6 +59,9 @@
     <script src="~/Scripts/popper.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/app/Home/home.js"></script>
+    <script src="~/Scripts/app/Project/Project.js"></script>
+    <script src="~/Scripts/app/UserProject/UserProject.js"></script>
+   
 
     @* DRAGGABLE SCRIPT AND MORE  *@
     <!-- SCRIPTS -->
@@ -69,6 +74,15 @@
     <!-- Global Required Scripts End -->
     <!-- Mystic core JavaScript -->
     <script src="/Content/assets/js/framework.js"></script>
+    <script src="/node_modules/shopify/draggable/lib/draggable.bundle.js"></script>
+    <script src="/node_modules/shopify/draggable/lib/draggable.bundle.legacy.js"></script>
+    <script src="/node_modules/shopify/draggable/lib/plugins.js"></script>
+    <script src="~/node_modules/shopify/draggable/lib/sortable.js"></script>
+    <script src="~/node_modules/shopify/draggable/lib/swappable.js"></script>
+    <script src="~/node_modules/shopify/draggable/lib/utils.js"></script>
+    <script src="~/node_modules/shopify/draggable/lib/droppable.js"></script>
+    <script src="~/node_modules/shopify/draggable/lib/draggable.js"></script>
+
 
     <!-- Settings -->
     <script src="/Content/assets/js/settings.js"></script>

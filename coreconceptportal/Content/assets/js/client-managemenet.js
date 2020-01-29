@@ -9,17 +9,17 @@
       datasets: [{
         label: "Users (thousands)",
         backgroundColor: ["#357ffa", "#f7b11b","#ff6c60","#8663e1","#08bf6f"],
-        borderWidth: 0,
         data: [725,890,729,316,275]
       }]
     },
     options: {
-      legend: {
-        display: false,
-      },
       title: {
         display: false,
-      }
+        text: 'Users By Country'
+      },
+      legend: {
+        display: false
+      },
     }
   });
 
@@ -66,7 +66,7 @@
         scales: {
           yAxes: [{
             ticks: {
-              fontColor: '#5c6dc0',
+              fontColor: "rgba(0,0,0,0.5)",
               fontStyle: "bold",
               beginAtZero: true,
               maxTicksLimit: 200,
@@ -84,7 +84,7 @@
             },
             ticks: {
               padding: 20,
-              fontColor: '#5c6dc0',
+              fontColor: "rgba(0,0,0,0.5)",
               fontStyle: "bold"
             }
         }]
