@@ -1,6 +1,16 @@
 ﻿var getUrl = window.location;
 var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 
+
+$('#drag').draggable(function () {
+
+    alert("");
+});
+
+
+
+
+
 $("#projectsList").on('change', function () {
 
     var id = $(this).val();
