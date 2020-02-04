@@ -3,7 +3,7 @@
 
   $("#default-wizard").steps({
     headerTag: "h3",
-    bodyTag: "section",
+    bodyTag: "div",
     autoFocus: true,
     titleTemplate: '#title#',
     labels: {
@@ -18,7 +18,7 @@
 
   $(".style2-wizard, .style3-wizard, .style4-wizard").steps({
     headerTag: "h3",
-    bodyTag: "section",
+    bodyTag: "div",
     autoFocus: true,
     titleTemplate: '<span class="number">#index#</span> #title#',
     labels: {

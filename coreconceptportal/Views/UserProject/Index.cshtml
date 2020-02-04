@@ -1,0 +1,116 @@
+﻿@*@model IEnumerable<coreconceptportal.ViewModels.UserProjectModel>*@
+
+@using coreconceptportal.ViewModels
+@model UserProjectModel
+    
+<h1>Add User to project</h1>
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div class="" style="display: inline-block">
+            <h6 class="section-title">Selecione o Projeto</h6>
+            <select id="projectsList">
+                <option></option>
+                @foreach (var project in Model.Projects)
+                {
+                    <option value="@project.ProjectId">@project.Name</option>
+                }
+
+            </select>
+        </div>
+
+        <div class="ms-body ms-aside-left-open ms-has-quickbar">
+            <div class="ms-panel">
+                <div class="ms-panel-header">
+                    <h6>O PROJETO SELECIONADO É </h6>
+                    <p></p>
+                </div>
+                <div class="ms-panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="section-title">Funcionários</h6>
+                            <ul class="ms-list ms-sortable-list">
+                                @foreach (var user in Model.Users)
+                                {
+                                    <li class="ms-list-item bordered media">
+                                        <i class="far fa-user"></i>
+                                        <div class="media-body">
+                                            <h5>@user.Name</h5>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="section-title">Funcionários Envolvidos no Projeto</h6>
+                            <ul class="ms-list ms-droppable ms-sortable-list">
+                                @foreach (var user in Model.Users)
+                                {
+                                    <li class="ms-list-item bordered media">
+                                        <i class="far fa-user"></i>
+                                        <div class="media-body">
+                                            <h5>@user.Name</h5>
+                                        </div>
+                                    </li>
+                                }
+
+                            </ul>
+                            <li class="ms-list-item bordered media">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% import 'components/StackedList/StackedListItem.html' as StackedListItem %}
+
+        {% macro render(id) %}
+        <section id="{{ id }}" class="{{ id }}">
+            <article id="ContainerOne" class="StackedListWrapper StackedListWrapper--sizeLarge StackedListWrapper--axisHorizontal Container">
+                <header class="StackedListHeader">
+                    <h3 class="Heading Heading--size3 Heading--colorWhite">Container one</h3>
+                </header>
+
+                <ul class="StackedList">
+                    {{ StackedListItem.render('zebra',    {index: 1, draggable: true}) }}
+                    {{ StackedListItem.render('giraffe',  {index: 2, draggable: true}) }}
+                    {{ StackedListItem.render('baboon',   {index: 3                 }) }}
+                    {{ StackedListItem.render('elephant', {index: 4, draggable: true}) }}
+                    {{ StackedListItem.render('leopard',  {index: 5, draggable: true}) }}
+                </ul>
+            </article>
+
+            <article id="ContainerTwo" class="StackedListWrapper StackedListWrapper--sizeMedium StackedListWrapper--hasScrollIndicator Container">
+                <header class="StackedListHeader">
+                    <h3 class="Heading Heading--size3 Heading--colorWhite">Container two</h3>
+                    <p><em>3 item capacity</em></p>
+                </header>
+
+                <ul class="StackedList StackedList--hasScroll">
+                    {{ StackedListItem.render('fluorescent grey', {index: 6, draggable: true}) }}
+                    {{ StackedListItem.render('rebecca purple',   {index: 7, draggable: true}) }}
+                </ul>
+            </article>
+
+            <article id="ContainerThree" class="StackedListWrapper StackedListWrapper--hasScrollIndicator Container">
+                <header class="StackedListHeader">
+                    <h3 class="Heading Heading--size3 Heading--colorWhite">Container three</h3>
+                </header>
+
+                <ul class="StackedList StackedList--hasScroll">
+                    {{ StackedListItem.render('apple',         {index: 8,  draggable: true}) }}
+                    {{ StackedListItem.render('banana',        {index: 9,  draggable: true}) }}
+                    {{ StackedListItem.render('cucumber',      {index: 10, draggable: true}) }}
+                    {{ StackedListItem.render('daikon radish', {index: 11                 }) }}
+                    {{ StackedListItem.render('elderberry',    {index: 12, draggable: true}) }}
+                    {{ StackedListItem.render('fresh thyme',   {index: 13, draggable: true}) }}
+                    {{ StackedListItem.render('guava',         {index: 14, draggable: true}) }}
+                </ul>
+            </article>
+        </section>
+        {% endmacro %}
+    </div>
+        <div class="col-md-1"></div>                     
+</div>

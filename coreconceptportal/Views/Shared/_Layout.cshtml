@@ -5,7 +5,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    @* DRAGABBLE LINKS CSS *@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -17,49 +16,65 @@
     <link href="/Content/assets/css/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery UI -->
     <link href="/Content/assets/css/jquery-ui.min.css" rel="stylesheet">
+    <link href="/Content/Site.css" rel="stylesheet">
+    <link href="/Content/MultipleContainer.scss" rel="stylesheet/less">
     <!-- Mystic styles -->
     <link href="/Content/assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/assets/fontawesome-free-5.12.0-web/css/all.css" />
+        <link href="https://fonts.googleapis.com/css?family=B612&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela&display=swap" rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.ico">
-    <!--Page Specific-->
     <link rel="stylesheet" href="~/fullcalendar/core/main.css" />
     <link rel="stylesheet" href="~/fullcalendar/daygrid/main.css" />
     <link rel="stylesheet" href="~/fullcalendar/timegrid/main.min.css" />
     <link rel="stylesheet" href="~/Content/sweetalert.css" />
     <link rel="stylesheet" href="~/Content/project.css" />
     <link rel="stylesheet" href="~/Content/toastr.css" />
+    @* DRAGABBLE LINKS CSS END *@
 
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" id="newUserForm" href="#">New user</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Logout","Login")">Logout</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container">
-        <div class="row">
-            <div style="height: 90vh">
-                @RenderBody()
+    <div id="navbarConcept">
+        <nav class="navbar navbar-expand-lg" id="navbarConcept">
+            <a class="navbar-brand" id="navbarLogo" href="#"></a>
+            <img width="160px" height="60px" src="~/Content/img/core_logo_no_bg.png" style="margin: 20px" />
+            @*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>*@
+            <div class=" navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav ml-auto" id="navButtons">
+                    <li class="nav-item">
+                        <a class="nav-link" id="newUserForm" href="#"><i class="far fa-user"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Logout","Login")" id="logoutLink">Terminar Sessão</a>
+                    </li>
+                </ul>
             </div>
-        </div>
+        </nav>
     </div>
-
+    <div class="container-fluid">
+        @RenderBody()
+    </div>
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/umd/popper.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
-    <script src="~/Scripts/moment-with-locales.js"></script>
+    <script src="~/Scripts/app/Home/home.js"></script>
+
+    @* DRAGGABLE SCRIPT AND MORE  *@
+    <!-- SCRIPTS -->
+    <!-- Global Required Scripts Start -->
+    <script src="/Content/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/Content/assets/js/popper.min.js"></script>
+    <script src="/Content/assets/js/bootstrap.min.js"></script>
+    <script src="/Content/assets/js/perfect-scrollbar.js"></script>
+    <script src="/Content/assets/js/jquery-ui.min.js"></script>
+    <!-- Global Required Scripts End -->
+    <!-- Mystic core JavaScript -->
+    <script src="../../assets/js/framework.js"></script>
+        <script src="~/Scripts/moment-with-locales.js"></script>
     <script src="~/fullcalendar/core/main.js"></script>
     <script src="~/fullcalendar/interaction/main.min.js"></script>
     <script src="~/fullcalendar/daygrid/main.js"></script>
@@ -70,6 +85,8 @@
     <script src="~/Scripts/sweetalert.min.js"></script>
     <script src="~/Scripts/toastr.js"></script>
     <script src="~/Scripts/hours.js"></script>
-
+    <!-- Settings -->
+    <script src="../../assets/js/settings.js"></script>
+    @* DRAGGABLE SCRIPT AND MORE END  *@
 </body>
 </html>

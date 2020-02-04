@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@shopify/draggable": "file:node_modules/@shopify/draggable"
+  }
+}

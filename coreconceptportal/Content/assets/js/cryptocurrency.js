@@ -295,13 +295,13 @@
     },
     legend: {
       display: false,
+      position: "top"
     },
     scales: {
         yAxes: [{
             ticks: {
                 beginAtZero: true,
-                padding: 20,
-                fontColor: '#5c6dc0'
+                padding: 20
             },
         }],
         xAxes: [{
@@ -309,7 +309,6 @@
             ticks: {
                 padding: 20,
                 beginAtZero: true,
-                fontColor: '#5c6dc0'
             }
         }]
     }
@@ -354,17 +353,22 @@
         {
           label: "Population (millions)",
           borderColor: 'transparent',
-          backgroundColor: ["#357ffa", "#f7b11b","#ff6c60","#8663e1","#08bf6f"],
+          backgroundColor: ["#357ffa", "#f0ad4e","#d9534f","#445cc8","#5cb85c"],
           data: [478,267,734,784,433]
         }
       ]
     },
     options: {
+      cutoutPercentage: 70,
+      animation: {
+        animateScale: true
+      },
       title: {
         display: false,
         text: 'Predicted world population (millions) in 2050'
       },
       legend: {
+        position: 'left',
         display: false,
       },
     }
