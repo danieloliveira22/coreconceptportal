@@ -11,7 +11,7 @@ namespace coreconceptportal.Controllers
         // GET: UserProject
         public ActionResult Index()
         {
-            return View("AddUserProject");
+            return View();
         }
 
         // GET: UserProject/Details/5

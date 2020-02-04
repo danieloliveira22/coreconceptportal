@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -48,10 +49,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -287,7 +288,15 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fullcalendar.css" />
+    <Content Include="Content\fullcalendar.min.css" />
+    <Content Include="Content\fullcalendar.print.css" />
+    <Content Include="Content\fullcalendar.print.min.css" />
     <Content Include="Content\img\core_logo_no_bg.png" />
+    <Content Include="Content\project.css" />
+    <Content Include="Content\sweetalert.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="Content\vendors\iconic-fonts\cryptocoins\cryptocoins-colors.css" />
     <Content Include="Content\vendors\iconic-fonts\cryptocoins\cryptocoins.css" />
     <Content Include="Content\vendors\iconic-fonts\flat-icons\flaticon.css" />
@@ -1625,6 +1634,89 @@
     <Content Include="Content\vendors\iconic-fonts\font-awesome\webfonts\fa-regular-400.svg" />
     <Content Include="Content\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.svg" />
     <Content Include="favicon.ico" />
+    <Content Include="fullcalendar\core\LICENSE.txt" />
+    <Content Include="fullcalendar\core\locales-all.js" />
+    <Content Include="fullcalendar\core\locales-all.min.js" />
+    <Content Include="fullcalendar\core\locales\af.js" />
+    <Content Include="fullcalendar\core\locales\ar-dz.js" />
+    <Content Include="fullcalendar\core\locales\ar-kw.js" />
+    <Content Include="fullcalendar\core\locales\ar-ly.js" />
+    <Content Include="fullcalendar\core\locales\ar-ma.js" />
+    <Content Include="fullcalendar\core\locales\ar-sa.js" />
+    <Content Include="fullcalendar\core\locales\ar-tn.js" />
+    <Content Include="fullcalendar\core\locales\ar.js" />
+    <Content Include="fullcalendar\core\locales\bg.js" />
+    <Content Include="fullcalendar\core\locales\bs.js" />
+    <Content Include="fullcalendar\core\locales\ca.js" />
+    <Content Include="fullcalendar\core\locales\cs.js" />
+    <Content Include="fullcalendar\core\locales\da.js" />
+    <Content Include="fullcalendar\core\locales\de.js" />
+    <Content Include="fullcalendar\core\locales\el.js" />
+    <Content Include="fullcalendar\core\locales\en-au.js" />
+    <Content Include="fullcalendar\core\locales\en-gb.js" />
+    <Content Include="fullcalendar\core\locales\en-nz.js" />
+    <Content Include="fullcalendar\core\locales\es-us.js" />
+    <Content Include="fullcalendar\core\locales\es.js" />
+    <Content Include="fullcalendar\core\locales\et.js" />
+    <Content Include="fullcalendar\core\locales\eu.js" />
+    <Content Include="fullcalendar\core\locales\fa.js" />
+    <Content Include="fullcalendar\core\locales\fi.js" />
+    <Content Include="fullcalendar\core\locales\fr-ca.js" />
+    <Content Include="fullcalendar\core\locales\fr-ch.js" />
+    <Content Include="fullcalendar\core\locales\fr.js" />
+    <Content Include="fullcalendar\core\locales\gl.js" />
+    <Content Include="fullcalendar\core\locales\he.js" />
+    <Content Include="fullcalendar\core\locales\hi.js" />
+    <Content Include="fullcalendar\core\locales\hr.js" />
+    <Content Include="fullcalendar\core\locales\hu.js" />
+    <Content Include="fullcalendar\core\locales\id.js" />
+    <Content Include="fullcalendar\core\locales\is.js" />
+    <Content Include="fullcalendar\core\locales\it.js" />
+    <Content Include="fullcalendar\core\locales\ja.js" />
+    <Content Include="fullcalendar\core\locales\ka.js" />
+    <Content Include="fullcalendar\core\locales\kk.js" />
+    <Content Include="fullcalendar\core\locales\ko.js" />
+    <Content Include="fullcalendar\core\locales\lb.js" />
+    <Content Include="fullcalendar\core\locales\lt.js" />
+    <Content Include="fullcalendar\core\locales\lv.js" />
+    <Content Include="fullcalendar\core\locales\mk.js" />
+    <Content Include="fullcalendar\core\locales\ms.js" />
+    <Content Include="fullcalendar\core\locales\nb.js" />
+    <Content Include="fullcalendar\core\locales\nl.js" />
+    <Content Include="fullcalendar\core\locales\nn.js" />
+    <Content Include="fullcalendar\core\locales\pl.js" />
+    <Content Include="fullcalendar\core\locales\pt-br.js" />
+    <Content Include="fullcalendar\core\locales\pt.js" />
+    <Content Include="fullcalendar\core\locales\ro.js" />
+    <Content Include="fullcalendar\core\locales\ru.js" />
+    <Content Include="fullcalendar\core\locales\sk.js" />
+    <Content Include="fullcalendar\core\locales\sl.js" />
+    <Content Include="fullcalendar\core\locales\sq.js" />
+    <Content Include="fullcalendar\core\locales\sr-cyrl.js" />
+    <Content Include="fullcalendar\core\locales\sr.js" />
+    <Content Include="fullcalendar\core\locales\sv.js" />
+    <Content Include="fullcalendar\core\locales\th.js" />
+    <Content Include="fullcalendar\core\locales\tr.js" />
+    <Content Include="fullcalendar\core\locales\uk.js" />
+    <Content Include="fullcalendar\core\locales\vi.js" />
+    <Content Include="fullcalendar\core\locales\zh-cn.js" />
+    <Content Include="fullcalendar\core\locales\zh-tw.js" />
+    <Content Include="fullcalendar\core\main.css" />
+    <Content Include="fullcalendar\core\main.esm.js" />
+    <Content Include="fullcalendar\core\main.js" />
+    <Content Include="fullcalendar\core\main.min.css" />
+    <Content Include="fullcalendar\core\main.min.js" />
+    <Content Include="fullcalendar\daygrid\LICENSE.txt" />
+    <Content Include="fullcalendar\daygrid\main.css" />
+    <Content Include="fullcalendar\daygrid\main.esm.js" />
+    <Content Include="fullcalendar\daygrid\main.js" />
+    <Content Include="fullcalendar\daygrid\main.min.css" />
+    <Content Include="fullcalendar\daygrid\main.min.js" />
+    <Content Include="fullcalendar\interaction\main.min.js" />
+    <Content Include="fullcalendar\moment-timezone\main.min.js" />
+    <Content Include="fullcalendar\moment\main.min.js" />
+    <Content Include="fullcalendar\timegrid\main.min.css" />
+    <Content Include="fullcalendar\timegrid\main.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Models\CoreConceptData.Context.tt">
@@ -1647,11 +1739,7 @@
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
     <Content Include="Scripts\esm\popper.min.js" />
-    <Content Include="Scripts\index.js.flow" />
-    <Content Include="Scripts\esm\popper.min.js.map" />
-    <Content Include="Scripts\esm\popper.js.map" />
-    <Content Include="Scripts\esm\popper-utils.min.js.map" />
-    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\hours.js" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
@@ -1731,6 +1819,17 @@
     <Content Include="Content\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.ttf" />
     <Content Include="Content\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.woff" />
     <Content Include="Content\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="fullcalendar\core\package.json" />
+    <Content Include="fullcalendar\core\README.md" />
+    <Content Include="fullcalendar\daygrid\package.json" />
+    <Content Include="fullcalendar\daygrid\README.md" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1743,7 +1842,10 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -1811,6 +1913,9 @@
     <Content Include="Scripts\src\utils\setAttributes.js" />
     <Content Include="Scripts\src\utils\setStyles.js" />
     <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\sweetalert.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -1829,16 +1934,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Scripts\umd\popper.min.js.map" />
-    <Content Include="Scripts\umd\popper.js.map" />
-    <Content Include="Scripts\umd\popper.js.flow" />
-    <Content Include="Scripts\umd\popper-utils.min.js.map" />
-    <Content Include="Scripts\umd\popper-utils.js.map" />
-    <Content Include="Scripts\README.md" />
-    <Content Include="Scripts\popper.min.js.map" />
-    <Content Include="Scripts\popper.js.map" />
-    <Content Include="Scripts\popper-utils.min.js.map" />
-    <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\Home\_formUser.cshtml" />
@@ -1853,6 +1948,16 @@
     <Content Include="Views\Projects\Edit.cshtml" />
     <Content Include="Views\Projects\Index.cshtml" />
     <Content Include="Views\UserProject\AddUserProject.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
@@ -1861,11 +1966,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\index.d.ts" />
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="fullcalendar\core\main.d.ts" />
+    <TypeScriptCompile Include="fullcalendar\daygrid\main.d.ts" />
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -1901,7 +2008,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

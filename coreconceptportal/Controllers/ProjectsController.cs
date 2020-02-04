@@ -17,7 +17,8 @@ namespace coreconceptportal.Controllers
         // GET: Projects
         public ActionResult Index()
         {
-            return View(db.Project.ToList());
+            //db.Project.ToList()
+            return View();
         }
 
         // GET: Projects/Details/5

@@ -21,7 +21,14 @@
     <link href="/Content/assets/css/style.css" rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.ico">
-    @* DRAGABBLE LINKS CSS END *@
+    <!--Page Specific-->
+    <link rel="stylesheet" href="~/fullcalendar/core/main.css" />
+    <link rel="stylesheet" href="~/fullcalendar/daygrid/main.css" />
+    <link rel="stylesheet" href="~/fullcalendar/timegrid/main.min.css" />
+    <link rel="stylesheet" href="~/Content/sweetalert.css" />
+    <link rel="stylesheet" href="~/Content/project.css" />
+    <link rel="stylesheet" href="~/Content/toastr.css" />
+
 
 </head>
 <body>
@@ -41,28 +48,28 @@
             </ul>
         </div>
     </nav>
-    <div>
-        @RenderBody()
+    <div class="container">
+        <div class="row">
+            <div style="height: 90vh">
+                @RenderBody()
+            </div>
+        </div>
     </div>
+
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    <script src="~/Scripts/popper.js"></script>
+    <script src="~/Scripts/umd/popper.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
-    <script src="~/Scripts/app/Home/home.js"></script>
+    <script src="~/Scripts/moment-with-locales.js"></script>
+    <script src="~/fullcalendar/core/main.js"></script>
+    <script src="~/fullcalendar/interaction/main.min.js"></script>
+    <script src="~/fullcalendar/daygrid/main.js"></script>
+    <script src="~/fullcalendar/timegrid/main.min.js"></script>
+    <script src="~/fullcalendar/moment/main.min.js"></script>
+    <script src="~/fullcalendar/moment-timezone/main.min.js"></script>
+    <script src="~/fullcalendar/core/locales/pt.js"></script>
+    <script src="~/Scripts/sweetalert.min.js"></script>
+    <script src="~/Scripts/toastr.js"></script>
+    <script src="~/Scripts/hours.js"></script>
 
-    @* DRAGGABLE SCRIPT AND MORE  *@
-    <!-- SCRIPTS -->
-    <!-- Global Required Scripts Start -->
-    <script src="/Content/assets/js/jquery-3.3.1.min.js"></script>
-    <script src="/Content/assets/js/popper.min.js"></script>
-    <script src="/Content/assets/js/bootstrap.min.js"></script>
-    <script src="/Content/assets/js/perfect-scrollbar.js"></script>
-    <script src="/Content/assets/js/jquery-ui.min.js"></script>
-    <!-- Global Required Scripts End -->
-    <!-- Mystic core JavaScript -->
-    <script src="../../assets/js/framework.js"></script>
-
-    <!-- Settings -->
-    <script src="../../assets/js/settings.js"></script>
-    @* DRAGGABLE SCRIPT AND MORE END  *@
 </body>
 </html>
