@@ -29,6 +29,7 @@ namespace coreconceptportal.Controllers
             try
             {
                 html = RenderPartialViewToString("_formUser");
+                
             }
             catch(Exception ex)
             {

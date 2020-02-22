@@ -129,41 +129,45 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\getUsersbyId.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JsonController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\PaymentsController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\UserProjectController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CoreConceptData.Context.cs">
+    <Compile Include="Models\CoreConceptDataBase.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CoreConceptData.Context.tt</DependentUpon>
+      <DependentUpon>CoreConceptDataBase.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CoreConceptData.cs">
+    <Compile Include="Models\CoreConceptDataBase.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CoreConceptData.tt</DependentUpon>
+      <DependentUpon>CoreConceptDataBase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CoreConceptData.Designer.cs">
+    <Compile Include="Models\CoreConceptDataBase.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CoreConceptData.edmx</DependentUpon>
+      <DependentUpon>CoreConceptDataBase.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Hours.cs">
-      <DependentUpon>CoreConceptData.tt</DependentUpon>
+      <DependentUpon>CoreConceptDataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Project.cs">
-      <DependentUpon>CoreConceptData.tt</DependentUpon>
+      <DependentUpon>CoreConceptDataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
-      <DependentUpon>CoreConceptData.tt</DependentUpon>
+      <DependentUpon>CoreConceptDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserProject.cs">
+      <DependentUpon>CoreConceptDataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\userAssociatedViewModel.cs" />
     <Compile Include="ViewModels\UserProjectModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1880,6 +1884,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\15669571866848.jpg" />
     <Content Include="Content\img\core_logo_no_bg.png" />
     <Content Include="Content\vendors\iconic-fonts\cryptocoins\cryptocoins-colors.css" />
     <Content Include="Content\vendors\iconic-fonts\cryptocoins\cryptocoins.css" />
@@ -3218,20 +3223,105 @@
     <Content Include="Content\vendors\iconic-fonts\font-awesome\webfonts\fa-regular-400.svg" />
     <Content Include="Content\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.svg" />
     <Content Include="favicon.ico" />
+    <Content Include="fullcalendar\core\LICENSE.txt" />
+    <Content Include="fullcalendar\core\locales-all.js" />
+    <Content Include="fullcalendar\core\locales-all.min.js" />
+    <Content Include="fullcalendar\core\locales\af.js" />
+    <Content Include="fullcalendar\core\locales\ar-dz.js" />
+    <Content Include="fullcalendar\core\locales\ar-kw.js" />
+    <Content Include="fullcalendar\core\locales\ar-ly.js" />
+    <Content Include="fullcalendar\core\locales\ar-ma.js" />
+    <Content Include="fullcalendar\core\locales\ar-sa.js" />
+    <Content Include="fullcalendar\core\locales\ar-tn.js" />
+    <Content Include="fullcalendar\core\locales\ar.js" />
+    <Content Include="fullcalendar\core\locales\bg.js" />
+    <Content Include="fullcalendar\core\locales\bs.js" />
+    <Content Include="fullcalendar\core\locales\ca.js" />
+    <Content Include="fullcalendar\core\locales\cs.js" />
+    <Content Include="fullcalendar\core\locales\da.js" />
+    <Content Include="fullcalendar\core\locales\de.js" />
+    <Content Include="fullcalendar\core\locales\el.js" />
+    <Content Include="fullcalendar\core\locales\en-au.js" />
+    <Content Include="fullcalendar\core\locales\en-gb.js" />
+    <Content Include="fullcalendar\core\locales\en-nz.js" />
+    <Content Include="fullcalendar\core\locales\es-us.js" />
+    <Content Include="fullcalendar\core\locales\es.js" />
+    <Content Include="fullcalendar\core\locales\et.js" />
+    <Content Include="fullcalendar\core\locales\eu.js" />
+    <Content Include="fullcalendar\core\locales\fa.js" />
+    <Content Include="fullcalendar\core\locales\fi.js" />
+    <Content Include="fullcalendar\core\locales\fr-ca.js" />
+    <Content Include="fullcalendar\core\locales\fr-ch.js" />
+    <Content Include="fullcalendar\core\locales\fr.js" />
+    <Content Include="fullcalendar\core\locales\gl.js" />
+    <Content Include="fullcalendar\core\locales\he.js" />
+    <Content Include="fullcalendar\core\locales\hi.js" />
+    <Content Include="fullcalendar\core\locales\hr.js" />
+    <Content Include="fullcalendar\core\locales\hu.js" />
+    <Content Include="fullcalendar\core\locales\id.js" />
+    <Content Include="fullcalendar\core\locales\is.js" />
+    <Content Include="fullcalendar\core\locales\it.js" />
+    <Content Include="fullcalendar\core\locales\ja.js" />
+    <Content Include="fullcalendar\core\locales\ka.js" />
+    <Content Include="fullcalendar\core\locales\kk.js" />
+    <Content Include="fullcalendar\core\locales\ko.js" />
+    <Content Include="fullcalendar\core\locales\lb.js" />
+    <Content Include="fullcalendar\core\locales\lt.js" />
+    <Content Include="fullcalendar\core\locales\lv.js" />
+    <Content Include="fullcalendar\core\locales\mk.js" />
+    <Content Include="fullcalendar\core\locales\ms.js" />
+    <Content Include="fullcalendar\core\locales\nb.js" />
+    <Content Include="fullcalendar\core\locales\nl.js" />
+    <Content Include="fullcalendar\core\locales\nn.js" />
+    <Content Include="fullcalendar\core\locales\pl.js" />
+    <Content Include="fullcalendar\core\locales\pt-br.js" />
+    <Content Include="fullcalendar\core\locales\pt.js" />
+    <Content Include="fullcalendar\core\locales\ro.js" />
+    <Content Include="fullcalendar\core\locales\ru.js" />
+    <Content Include="fullcalendar\core\locales\sk.js" />
+    <Content Include="fullcalendar\core\locales\sl.js" />
+    <Content Include="fullcalendar\core\locales\sq.js" />
+    <Content Include="fullcalendar\core\locales\sr-cyrl.js" />
+    <Content Include="fullcalendar\core\locales\sr.js" />
+    <Content Include="fullcalendar\core\locales\sv.js" />
+    <Content Include="fullcalendar\core\locales\th.js" />
+    <Content Include="fullcalendar\core\locales\tr.js" />
+    <Content Include="fullcalendar\core\locales\uk.js" />
+    <Content Include="fullcalendar\core\locales\vi.js" />
+    <Content Include="fullcalendar\core\locales\zh-cn.js" />
+    <Content Include="fullcalendar\core\locales\zh-tw.js" />
+    <Content Include="fullcalendar\core\main.css" />
+    <Content Include="fullcalendar\core\main.esm.js" />
+    <Content Include="fullcalendar\core\main.js" />
+    <Content Include="fullcalendar\core\main.min.css" />
+    <Content Include="fullcalendar\core\main.min.js" />
+    <Content Include="fullcalendar\daygrid\LICENSE.txt" />
+    <Content Include="fullcalendar\daygrid\main.css" />
+    <Content Include="fullcalendar\daygrid\main.esm.js" />
+    <Content Include="fullcalendar\daygrid\main.js" />
+    <Content Include="fullcalendar\daygrid\main.min.css" />
+    <Content Include="fullcalendar\daygrid\main.min.js" />
+    <Content Include="fullcalendar\interaction\main.min.js" />
+    <Content Include="fullcalendar\moment-timezone\main.min.js" />
+    <Content Include="fullcalendar\moment\main.min.js" />
+    <Content Include="fullcalendar\timegrid\main.min.css" />
+    <Content Include="fullcalendar\timegrid\main.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\CoreConceptData.Context.tt">
+    <Content Include="Models\CoreConceptDataBase.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CoreConceptData.edmx</DependentUpon>
-      <LastGenOutput>CoreConceptData.Context.cs</LastGenOutput>
+      <DependentUpon>CoreConceptDataBase.edmx</DependentUpon>
+      <LastGenOutput>CoreConceptDataBase.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\CoreConceptData.tt">
+    <Content Include="Models\CoreConceptDataBase.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CoreConceptData.edmx</DependentUpon>
-      <LastGenOutput>CoreConceptData.cs</LastGenOutput>
+      <DependentUpon>CoreConceptDataBase.edmx</DependentUpon>
+      <LastGenOutput>CoreConceptDataBase.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\app\Home\home.js" />
+    <Content Include="Scripts\app\Payments\payments.js" />
     <Content Include="Scripts\app\Project\Project.js" />
+    <Content Include="Scripts\app\UserProject\select2.min.js" />
     <Content Include="Scripts\app\UserProject\UserProject.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -3241,6 +3331,7 @@
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
     <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\hours.js" />
     <Content Include="Scripts\index.js.flow" />
     <Content Include="Scripts\esm\popper.min.js.map" />
     <Content Include="Scripts\esm\popper.js.map" />
@@ -3256,13 +3347,6 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <EntityDeploy Include="Models\CoreConceptData.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CoreConceptData.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\CoreConceptData.edmx.diagram">
-      <DependentUpon>CoreConceptData.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\assets\fonts\Roboto-Bold.ttf" />
     <Content Include="Content\assets\fonts\Roboto-Italic.ttf" />
     <Content Include="Content\assets\fonts\Roboto-Medium.ttf" />
@@ -3379,6 +3463,18 @@
     <Content Include="Content\assets\fontawesome-free-5.12.0-web\webfonts\fa-solid-900.ttf" />
     <Content Include="Content\assets\fontawesome-free-5.12.0-web\webfonts\fa-solid-900.woff" />
     <Content Include="Content\assets\fontawesome-free-5.12.0-web\webfonts\fa-solid-900.woff2" />
+    <Content Include="fullcalendar\core\package.json" />
+    <Content Include="fullcalendar\core\README.md" />
+    <Content Include="fullcalendar\daygrid\package.json" />
+    <Content Include="fullcalendar\daygrid\README.md" />
+    <Content Include="Content\select2.min.css" />
+    <EntityDeploy Include="Models\CoreConceptDataBase.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CoreConceptDataBase.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\CoreConceptDataBase.edmx.diagram">
+      <DependentUpon>CoreConceptDataBase.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3395,6 +3491,10 @@
     <Content Include="Scripts\jqueryUI\jquery-ui.min.js" />
     <Content Include="Scripts\jqueryUI\jquery.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -3462,6 +3562,9 @@
     <Content Include="Scripts\src\utils\setAttributes.js" />
     <Content Include="Scripts\src\utils\setStyles.js" />
     <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\sweetalert.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -3498,13 +3601,14 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\UserProject\Index.cshtml" />
+    <Content Include="Views\UserProject\_usersList.cshtml" />
+    <Content Include="Views\Payments\Index.cshtml" />
     <Content Include="Views\Projects\Create.cshtml" />
     <Content Include="Views\Projects\Delete.cshtml" />
     <Content Include="Views\Projects\Details.cshtml" />
     <Content Include="Views\Projects\Edit.cshtml" />
     <Content Include="Views\Projects\Index.cshtml" />
-    <Content Include="Views\UserProject\Index.cshtml" />
-    <Content Include="Views\UserProject\_usersAssociated.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
@@ -3513,6 +3617,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="fullcalendar\core\main.d.ts" />
+    <TypeScriptCompile Include="fullcalendar\daygrid\main.d.ts" />
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>

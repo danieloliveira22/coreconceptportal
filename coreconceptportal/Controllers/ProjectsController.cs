@@ -17,8 +17,7 @@ namespace coreconceptportal.Controllers
         // GET: Projects
         public ActionResult Index()
         {
-            //db.Project.ToList()
-            return View();
+            return View(db.Project.ToList());
         }
 
         // GET: Projects/Details/5
@@ -47,11 +46,10 @@ namespace coreconceptportal.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProjectId,Name,Workers,StartDate,EndDate")] Project project)
+        public ActionResult Create([Bind(Include = "ProjectId,Name,CountEmployees,StartDate,EndDate,Status")] Project project)
         {
             if (ModelState.IsValid)
             {
-                db.Database.ExecuteSqlCommand("SET IDENTITY_INSERT [dbo].[Project] ON");
                 db.Project.Add(project);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -80,7 +78,7 @@ namespace coreconceptportal.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProjectId,Name,Workers,StartDate,EndDate")] Project project)
+        public ActionResult Edit([Bind(Include = "ProjectId,Name,CountEmployees,StartDate,EndDate,Status")] Project project)
         {
             if (ModelState.IsValid)
             {

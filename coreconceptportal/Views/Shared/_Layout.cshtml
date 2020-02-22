@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>2
+﻿<!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" href="~/Content/bootstrap.min.css">
@@ -16,11 +16,13 @@
     <link href="/Content/assets/css/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery UI -->
     <link href="/Content/assets/css/jquery-ui.min.css" rel="stylesheet">
+    <link href="/Content/select2.min.css" rel="stylesheet" />
+
     <link href="/Content/Site.css" rel="stylesheet">
     <!-- Mystic styles -->
     <link href="/Content/assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="~/Content/assets/fontawesome-free-5.12.0-web/css/all.css" />
-        <link href="https://fonts.googleapis.com/css?family=B612&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=B612&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Varela&display=swap" rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.ico">
@@ -31,6 +33,7 @@
     <link rel="stylesheet" href="~/Content/project.css" />
     <link rel="stylesheet" href="~/Content/toastr.css" />
     @* DRAGABBLE LINKS CSS END *@
+
 
 
 </head>
@@ -60,20 +63,15 @@
 
 
 
-    <script src="~/Scripts/jqueryUI/jquery.js"></script>
+    @*<script src="~/Scripts/jqueryUI/jquery.js"></script>
 
-    <script src="~/Scripts/jqueryUI/jquery-ui.min.js"></script>
-    <script src="~/Scripts/jqueryUI/jquery-ui.js"></script>
+        <script src="~/Scripts/jqueryUI/jquery-ui.min.js"></script>
+        <script src="~/Scripts/jqueryUI/jquery-ui.js"></script>*@
 
 
 
 
     @*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
-    <script src="~/Scripts/popper.js"></script>
-    <script src="~/Scripts/bootstrap.js"></script>
-    <script src="~/Scripts/app/Home/home.js"></script>
-    <script src="~/Scripts/app/Project/Project.js"></script>
-    <script src="~/Scripts/app/UserProject/UserProject.js"></script>
 
 
     @*JQUERY UI SCRIPT*@
@@ -85,27 +83,28 @@
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/umd/popper.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
-    
 
 
+    @*<script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>*@
     @* DRAGGABLE SCRIPT AND MORE  *@
     <!-- SCRIPTS -->
     <!-- Global Required Scripts Start -->
+    @*<script src="/Content/assets/js/popper.min.js"></script>
+        <script src="/Content/assets/js/bootstrap.min.js"></script>
+        <script src="/Content/assets/js/perfect-scrollbar.js"></script>*@
 
-    <script src="/Content/assets/js/popper.min.js"></script>
-    <script src="/Content/assets/js/bootstrap.min.js"></script>
-    <script src="/Content/assets/js/perfect-scrollbar.js"></script>
-    
     <!-- Global Required Scripts End -->
     <!-- Mystic core JavaScript -->
 
-   
-
-
-
-
-    <script src="../../assets/js/framework.js"></script>
-        <script src="~/Scripts/moment-with-locales.js"></script>
+    <script src="/Content/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/Content/assets/js/popper.min.js"></script>
+    <script src="/Content/assets/js/bootstrap.min.js"></script>
+    <script src="/Content/assets/js/perfect-scrollbar.js"></script>
+    <script src="/Content/assets/js/jquery-ui.min.js"></script>
+    <script src="/Content/assets/js/framework.js"></script>
+    <script src="~/Scripts/moment-with-locales.js"></script>
     <script src="~/fullcalendar/core/main.js"></script>
     <script src="~/fullcalendar/interaction/main.min.js"></script>
     <script src="~/fullcalendar/daygrid/main.js"></script>
@@ -117,7 +116,15 @@
     <script src="~/Scripts/toastr.js"></script>
     <script src="~/Scripts/hours.js"></script>
     <!-- Settings -->
-    <script src="../../assets/js/settings.js"></script>
+    <script src="/Content/assets/js/settings.js"></script>
     @* DRAGGABLE SCRIPT AND MORE END  *@
+    <script src="/Scripts/app/UserProject/select2.min.js"></script>
+
+    <script src="~/Scripts/app/Home/home.js"></script>
+    <script src="~/Scripts/app/Project/Project.js"></script>
+    <script src="~/Scripts/app/UserProject/UserProject.js"></script>
+    <script src="~/Scripts/app/Payments/payments.js"></script>
+
+    @RenderSection("ScriptView", required: false)
 </body>
 </html>

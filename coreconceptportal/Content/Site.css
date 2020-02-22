@@ -145,3 +145,32 @@ textarea {
     }
    
     /*################## nav BAR CSS #####################*/
+
+#usersBox {
+    overflow-y: scroll;
+    height: 550px;
+    max-height: 550px;
+    margin-top: 25px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    overflow:hidden;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #c2c9d2;
+    overflow: hidden;
+}
+
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: #00264d;
+    }

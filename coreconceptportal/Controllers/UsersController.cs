@@ -17,8 +17,8 @@ namespace coreconceptportal.Controllers
         // GET: Users
         public ActionResult Index()
         {
-            var user = db.User.Include(u => u.Hours);
-            return View(user.ToList());
+      
+            return View();
         }
 
         // GET: Users/Details/5

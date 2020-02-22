@@ -1,7 +1,7 @@
 (function ($) {
   'use strict';
 
-  $(".ms-panel-body").on('click', '.trigger-swal', function () {
+  $("ms-panel-body").on('click', '.trigger-swal', function () {
 
     var swalType = $(this).data('swal');
 
@@ -20,9 +20,9 @@
         break;
       case 'positioned':
         Swal.fire({
-          position: 'top-end',
+          position: 'center-end',
           type: 'success',
-          title: 'Your work has been saved',
+          title: 'Funcionários adicionados com sucesso!',
           showConfirmButton: false,
           timer: 1500
         });

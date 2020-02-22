@@ -14,12 +14,10 @@ namespace coreconceptportal.Models
     
     public partial class Hours
     {
-        public int UserId { get; set; }
+        public int IdHora { get; set; }
+        public Nullable<int> UserId { get; set; }
         public Nullable<int> ProjectId { get; set; }
-        public Nullable<System.DateTime> ExtraHours { get; set; }
-        public Nullable<System.DateTime> Hours1 { get; set; }
-    
-        public virtual Project Project { get; set; }
-        public virtual User User { get; set; }
+        public Nullable<System.DateTime> StartDate { get; set; }
+        public Nullable<System.DateTime> EndDate { get; set; }
     }
 }

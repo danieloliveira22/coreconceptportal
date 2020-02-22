@@ -1,0 +1,45 @@
+﻿@model IEnumerable<coreconceptportal.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="row" style="padding:20px">
+
+        <div class="col-md-4">
+            <div id="usersBox">
+
+
+                @foreach (var item in Model)
+                {
+                <ul class="ms-followers ms-list ms-scrollable ps">
+
+                    <li class="ms-list-item media ms-chat-user-container ms-open-chat ms-deletable p-3 media clearfix" style="cursor: pointer;">
+                        <img src="~/Content/img/15669571866848.jpg" class="ms-img-small ms-img-round" alt="people">
+
+                        <div class="media-body mt-1">
+                        @Html.DisplayFor(modelItem => item.Name)
+                            <h4></h4>
+                            <span class="fs-12">UI Designer</span>
+                        </div>
+
+
+                    </li>
+                </ul>
+
+                  
+
+                }
+            </div>
+
+        </div>
+        <div class="col-md-12"></div>
+
+    </div>
+
+
+
+
+

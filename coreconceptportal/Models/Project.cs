@@ -17,16 +17,17 @@ namespace coreconceptportal.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Project()
         {
-            this.Hours = new HashSet<Hours>();
+            this.UserProject = new HashSet<UserProject>();
         }
     
         public int ProjectId { get; set; }
         public string Name { get; set; }
-        public Nullable<int> Workers { get; set; }
+        public Nullable<int> CountEmployees { get; set; }
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
+        public string Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Hours> Hours { get; set; }
+        public virtual ICollection<UserProject> UserProject { get; set; }
     }
 }
